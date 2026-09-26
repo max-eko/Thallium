@@ -19,11 +19,14 @@ target_sources(Thallium
             "${CMAKE_CURRENT_SOURCE_DIR}/src/util/camera.cpp"
             "${CMAKE_CURRENT_SOURCE_DIR}/src/util/shader.cpp"
             "${CMAKE_CURRENT_SOURCE_DIR}/src/util/texture.cpp"
+            "${CMAKE_CURRENT_SOURCE_DIR}/src/model/mesh.cpp"
         PRIVATE FILE_SET HEADERS
         FILES
             "${CMAKE_CURRENT_SOURCE_DIR}/src/util/shader.h"
             "${CMAKE_CURRENT_SOURCE_DIR}/src/util/texture.h"
             "${CMAKE_CURRENT_SOURCE_DIR}/src/util/camera.h"
+            "${CMAKE_CURRENT_SOURCE_DIR}/src/model/mesh.h"
+
 )
 
 # Adds root dir as macro for assets
