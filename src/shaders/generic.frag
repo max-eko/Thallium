@@ -10,6 +10,5 @@ uniform sampler2D container;
 void main()
 {
     float ambientStrength = 0.1f;
-    vec3 ambi
     FragColor = texture(container, TexCoord);
 }

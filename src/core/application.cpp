@@ -152,7 +152,6 @@ int main()
         // Update matrices and pass to shader
         glm::mat4 view = camera.GetViewMatrix();
         glm::mat4 projection = camera.GetProjectionMatrix(SCR_WIDTH, SCR_HEIGHT);
-        model = glm::rotate(model, static_cast<float>(glfwGetTime() / 100), glm::vec3(0.0f, 0.0f, 1.0f));
         standardShader.setMat4("view", view);
         standardShader.setMat4("projection", projection);
         standardShader.setMat4("model", model);
