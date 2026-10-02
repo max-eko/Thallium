@@ -146,7 +146,7 @@ int main()
     standardShader.setVec3("lightPos", glm::vec3(1.0f, 0.0f, 1.0f));
     standardShader.setVec3("lightColor", glm::vec3(1.0f));
 
-    standardShader.setFloat("ambientStrength", 0.1f);
+    standardShader.setFloat("ambientStrength", 0.25f);
     standardShader.setFloat("roughness", 0.5f);
     standardShader.setInt("specularExponent", 32);
 
