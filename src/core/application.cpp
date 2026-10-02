@@ -6,8 +6,8 @@
 
 #include <iostream>
 #include <iterator>
+#include <vector>
 #include <filesystem>
-#include <cmath>
 
 #include "src/util/shader.h"
 #include "src/util/texture.h"
@@ -68,11 +68,11 @@ int main()
         return -1;
     }
 
-    Shader shader(ROOT "/src/shaders/shader.vert", ROOT "/src/shaders/shader.frag");
-    Texture texture1("texture1", ROOT "/assets/container.jpg");
-    Texture texture2("texture2", ROOT "/assets/awesomeface.png");
+    Shader standardShader("../src/shaders/generic.vert", "../src/shaders/generic.frag");
+    Texture container("container", "../assets/container.jpg");
+    Texture awesomeFace("awesomeFace", "../assets/awesomeface.png");
 
-    float vertices[] = {
+    float cubeVertices[] = {
         // Front face
         -0.5f, -0.5f,  0.5f,  0, 0, 0,  0.0f, 0.0f, // 0
         0.5f, -0.5f,  0.5f,  0, 0, 0,  1.0f, 0.0f, // 1
@@ -104,7 +104,7 @@ int main()
         0.5f, -0.5f,  0.5f,  0, 0, 0,  1.0f, 1.0f, // 22
         -0.5f, -0.5f,  0.5f,  0, 0, 0,  0.0f, 1.0f  // 23
    };
-    unsigned int indices[] = {
+    unsigned int cubeIndices[] = {
         // Front
         0,  1,  2,
         2,  3,  0,
@@ -125,8 +125,8 @@ int main()
        22, 23, 20
     };
 
-    Mesh platform(std::vector<float>(std::begin(vertices), std::end(vertices)),
-        std::vector<unsigned int>(std::begin(indices), std::end(indices)) );
+    Mesh cube(std::vector<float>(std::begin(cubeVertices), std::end(cubeVertices)),
+        std::vector<unsigned int>(std::begin(cubeIndices), std::end(cubeIndices)) );
 
     glEnable(GL_DEPTH_TEST);
 
@@ -134,14 +134,16 @@ int main()
     glfwSetCursorPosCallback(window, mouse_callback);
     glfwSetScrollCallback(window, scroll_callback);
 
-    shader.use();
+    standardShader.use();
 
-    shader.setTexture(texture1);
-    shader.setTexture(texture2);
+    standardShader.setTexture(container);
+    //standardShader.setTexture(awesomeFace);
 
     glm::mat4 model = glm::mat4(1.0f);
 
     lastFrame = static_cast<float>(glfwGetTime());
+
+    standardShader.setVec3("lightColor", glm::vec3(0.0f));
 
     // Render Loop
     while(!glfwWindowShouldClose(window))
@@ -151,20 +153,20 @@ int main()
         glm::mat4 view = camera.GetViewMatrix();
         glm::mat4 projection = camera.GetProjectionMatrix(SCR_WIDTH, SCR_HEIGHT);
         model = glm::rotate(model, static_cast<float>(glfwGetTime() / 100), glm::vec3(0.0f, 0.0f, 1.0f));
-        shader.setMat4("view", view);
-        shader.setMat4("projection", projection);
-        shader.setMat4("model", model);
+        standardShader.setMat4("view", view);
+        standardShader.setMat4("projection", projection);
+        standardShader.setMat4("model", model);
         // Process input
         processInput(window);
         // Sets window color and updates depth buffer
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        // Activates shader + textures
-        shader.use();
-        texture1.use();
-        texture2.use();
-        // Draws triangles
-        platform.draw();
+        // Activates standard shader + textures
+        standardShader.use();
+        container.use();
+        awesomeFace.use();
+        // Draws cube
+        cube.draw();
         // Updates window
         glfwSwapBuffers(window);
         glfwPollEvents();

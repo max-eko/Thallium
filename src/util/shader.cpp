@@ -102,7 +102,13 @@ void Shader::setMat4(const std::string &name, glm::mat4 value) const
 {
     glUniformMatrix4fv(glGetUniformLocation(ID, name.c_str()), 1, GL_FALSE, glm::value_ptr(value));
 }
+
+void Shader::setVec3(const std::string& name, glm::vec3 value) const
+{
+    glUniform3fv(glGetUniformLocation(ID, name.c_str()),1, glm::value_ptr(value));
+}
+
 void Shader::setTexture(const Texture& texture) const
 {
-    glUniform1i(glGetUniformLocation(ID, texture.getName().c_str()), texture.getUnit());
+    glUniform1i(glGetUniformLocation(ID, texture.getName().c_str()), static_cast<GLint>(texture.getUnit()));
 }
