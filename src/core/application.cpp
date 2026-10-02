@@ -74,35 +74,35 @@ int main()
 
     float cubeVertices[] = {
         // Front face
-        -0.5f, -0.5f,  0.5f,  0, 0, 0,  0.0f, 0.0f, // 0
-        0.5f, -0.5f,  0.5f,  0, 0, 0,  1.0f, 0.0f, // 1
-        0.5f,  0.5f,  0.5f,  0, 0, 0,  1.0f, 1.0f, // 2
-        -0.5f,  0.5f,  0.5f,  0, 0, 0,  0.0f, 1.0f, // 3
+        -0.5f, -0.5f,  0.5f,  0, 0, 1,  0.0f, 0.0f, // 0
+        0.5f, -0.5f,  0.5f,  0, 0, 1,  1.0f, 0.0f, // 1
+        0.5f,  0.5f,  0.5f,  0, 0, 1,  1.0f, 1.0f, // 2
+        -0.5f,  0.5f,  0.5f,  0, 0, 1,  0.0f, 1.0f, // 3
         // Back face
-        0.5f, -0.5f, -0.5f,  0, 0, 0,  0.0f, 0.0f, // 4
-        -0.5f, -0.5f, -0.5f,  0, 0, 0,  1.0f, 0.0f, // 5
-        -0.5f,  0.5f, -0.5f,  0, 0, 0,  1.0f, 1.0f, // 6
-        0.5f,  0.5f, -0.5f,  0, 0, 0,  0.0f, 1.0f, // 7
+        0.5f, -0.5f, -0.5f,  0, 0, -1,  0.0f, 0.0f, // 4
+        -0.5f, -0.5f, -0.5f,  0, 0, -1,  1.0f, 0.0f, // 5
+        -0.5f,  0.5f, -0.5f,  0, 0, -1,  1.0f, 1.0f, // 6
+        0.5f,  0.5f, -0.5f,  0, 0, -1,  0.0f, 1.0f, // 7
         // Left face
-        -0.5f, -0.5f, -0.5f,  0, 0, 0,  0.0f, 0.0f, // 8
-        -0.5f, -0.5f,  0.5f,  0, 0, 0,  1.0f, 0.0f, // 9
-        -0.5f,  0.5f,  0.5f,  0, 0, 0,  1.0f, 1.0f, // 10
-        -0.5f,  0.5f, -0.5f,  0, 0, 0,  0.0f, 1.0f, // 11
+        -0.5f, -0.5f, -0.5f,  -1, 0, 0,  0.0f, 0.0f, // 8
+        -0.5f, -0.5f,  0.5f,  -1, 0, 0,  1.0f, 0.0f, // 9
+        -0.5f,  0.5f,  0.5f,  -1, 0, 0,  1.0f, 1.0f, // 10
+        -0.5f,  0.5f, -0.5f,  -1, 0, 0,  0.0f, 1.0f, // 11
         // Right face
-        0.5f, -0.5f,  0.5f,  0, 0, 0,  0.0f, 0.0f, // 12
-        0.5f, -0.5f, -0.5f,  0, 0, 0,  1.0f, 0.0f, // 13
-        0.5f,  0.5f, -0.5f,  0, 0, 0,  1.0f, 1.0f, // 14
-        0.5f,  0.5f,  0.5f,  0, 0, 0,  0.0f, 1.0f, // 15
+        0.5f, -0.5f,  0.5f,  1, 0, 0,  0.0f, 0.0f, // 12
+        0.5f, -0.5f, -0.5f,  1, 0, 0,  1.0f, 0.0f, // 13
+        0.5f,  0.5f, -0.5f,  1, 0, 0,  1.0f, 1.0f, // 14
+        0.5f,  0.5f,  0.5f,  1, 0, 0,  0.0f, 1.0f, // 15
         // Top face
-        -0.5f,  0.5f,  0.5f,  0, 0, 0,  0.0f, 0.0f, // 16
-        0.5f,  0.5f,  0.5f,  0, 0, 0,  1.0f, 0.0f, // 17
-        0.5f,  0.5f, -0.5f,  0, 0, 0,  1.0f, 1.0f, // 18
-        -0.5f,  0.5f, -0.5f,  0, 0, 0,  0.0f, 1.0f, // 19
+        -0.5f,  0.5f,  0.5f,  0, 1, 0,  0.0f, 0.0f, // 16
+        0.5f,  0.5f,  0.5f,  0, 1, 0,  1.0f, 0.0f, // 17
+        0.5f,  0.5f, -0.5f,  0, 1, 0,  1.0f, 1.0f, // 18
+        -0.5f,  0.5f, -0.5f,  0, 1, 0,  0.0f, 1.0f, // 19
         // Bottom face
-        -0.5f, -0.5f, -0.5f,  0, 0, 0,  0.0f, 0.0f, // 20
-        0.5f, -0.5f, -0.5f,  0, 0, 0,  1.0f, 0.0f, // 21
-        0.5f, -0.5f,  0.5f,  0, 0, 0,  1.0f, 1.0f, // 22
-        -0.5f, -0.5f,  0.5f,  0, 0, 0,  0.0f, 1.0f  // 23
+        -0.5f, -0.5f, -0.5f,  0, -1, 0,  0.0f, 0.0f, // 20
+        0.5f, -0.5f, -0.5f,  0, -1, 0,  1.0f, 0.0f, // 21
+        0.5f, -0.5f,  0.5f,  0, -1, 0,  1.0f, 1.0f, // 22
+        -0.5f, -0.5f,  0.5f,  0, -1, 0,  0.0f, 1.0f  // 23
    };
     unsigned int cubeIndices[] = {
         // Front
@@ -143,7 +143,12 @@ int main()
 
     lastFrame = static_cast<float>(glfwGetTime());
 
-    standardShader.setVec3("lightColor", glm::vec3(0.0f));
+    standardShader.setVec3("lightPos", glm::vec3(1.0f, 0.0f, 1.0f));
+    standardShader.setVec3("lightColor", glm::vec3(1.0f));
+
+    standardShader.setFloat("ambientStrength", 0.1f);
+    standardShader.setFloat("roughness", 0.5f);
+    standardShader.setInt("specularExponent", 32);
 
     // Render Loop
     while(!glfwWindowShouldClose(window))
@@ -155,6 +160,8 @@ int main()
         standardShader.setMat4("view", view);
         standardShader.setMat4("projection", projection);
         standardShader.setMat4("model", model);
+        // Pass camera position to shader
+        standardShader.setVec3("viewPos", camera.Position);
         // Process input
         processInput(window);
         // Sets window color and updates depth buffer
