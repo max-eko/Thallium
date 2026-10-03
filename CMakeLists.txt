@@ -13,15 +13,16 @@ add_executable(Thallium)
 
 target_sources(Thallium
         PRIVATE
-            src/core/application.cpp
             "${DEPS_ROOT}/lib/glad.c"
             "${DEPS_ROOT}/include/stb/stb_image.cpp"
+            "${CMAKE_CURRENT_SOURCE_DIR}/src/core/application.cpp"
             "${CMAKE_CURRENT_SOURCE_DIR}/src/util/camera.cpp"
             "${CMAKE_CURRENT_SOURCE_DIR}/src/util/shader.cpp"
             "${CMAKE_CURRENT_SOURCE_DIR}/src/util/texture.cpp"
             "${CMAKE_CURRENT_SOURCE_DIR}/src/model/mesh.cpp"
         PRIVATE FILE_SET HEADERS
         FILES
+            "${CMAKE_CURRENT_SOURCE_DIR}/src/core/application.h"
             "${CMAKE_CURRENT_SOURCE_DIR}/src/util/shader.h"
             "${CMAKE_CURRENT_SOURCE_DIR}/src/util/texture.h"
             "${CMAKE_CURRENT_SOURCE_DIR}/src/util/camera.h"
