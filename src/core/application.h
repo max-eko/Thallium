@@ -1,0 +1,8 @@
+//
+// Created by Maksim on 10/2/2026.
+//
+
+#ifndef THALLIUM_APPLICATION_H
+#define THALLIUM_APPLICATION_H
+
+#endif //THALLIUM_APPLICATION_H
