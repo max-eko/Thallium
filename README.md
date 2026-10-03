@@ -13,6 +13,6 @@ Currently, this project will take some modification to support compilers other t
 
 # Screenshots
 **v0.0.1**  
-![An image of a unshaded cube](demo/v0.0.1.png)  
+![An image of a unshaded cube](examples/v0.0.1.png)  
 **v0.0.2**  
-![An image of a shaded cube](demo/v0.0.2.png)
+![An image of a shaded cube](examples/v0.0.2.png)
